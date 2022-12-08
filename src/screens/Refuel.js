@@ -1,15 +1,14 @@
 import { View, Text, TouchableOpacity, TextInput, Button} from 'react-native'
 import React from 'react'
 import { useState } from 'react'
+import AntDesign from 'react-native-vector-icons/AntDesign'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { windowHeight, windowWidth } from '../utils/Dimensions'
+import User1 from './User1'
 
-export default function Refuel() {
+const Refuel = ({navigation}) => {
 
     const [ emptycylinderweight, setEmptyCylinderWeight] = useState('');
-//   const [email, setEmail] = useState('');
-//   const [devicesno, setDevicesNo] = useState('');
-//   const [deviceid, setDeviceId] = useState('');
 
   return (
     <SafeAreaView style={{
@@ -28,9 +27,19 @@ export default function Refuel() {
           borderBottomRightRadius: 20,
           paddingHorizontal: 20,
         }}>
+          <View style={{
+              //flexDirection: 'row',
+              //justifyContent: 'space-between',
+              marginTop: 20,
+            }}>
+              <TouchableOpacity
+                onPress={()=> navigation.navigate(User1)}
+              >
+                <AntDesign name='back' size={30} color='#FFF' />
+              </TouchableOpacity>
             <View style={{
               //width:'100%',
-              paddingTop: 40,
+              paddingTop: 20,
               alignItems: 'center',
             }}>
               <Text style={{
@@ -40,9 +49,11 @@ export default function Refuel() {
               }}>Refuel</Text>
             </View>
             </View>
+            </View>
             <View style={{
                 alignItems:'center',
-                padding:10
+                padding:10,
+                marginTop:10,
             }}>
             <TextInput
             value={emptycylinderweight}
@@ -58,47 +69,9 @@ export default function Refuel() {
             marginVertical: 12,}}
             />
 
-{/* <TextInput
-            value={email}
-            onChangeText={setEmail} 
-            placeholder='Enter Email'
-            style = {{backgroundColor: 'white',
-            width: '100%',
-            borderColor: '#e8e8e8',
-            borderWidth: 4,
-            borderRadius: 6,
-            paddingHorizontal: 10,
-            marginVertical: 12,}}
-            />
-
-<TextInput
-            value={devicesno}
-            onChangeText={setDevicesNo} 
-            placeholder='Enter Devices No.'
-            style = {{backgroundColor: 'white',
-            width: '100%',
-            borderColor: '#e8e8e8',
-            borderWidth: 4,
-            borderRadius: 6,
-            paddingHorizontal: 10,
-            marginVertical: 12,}}
-            />
-
-<TextInput
-            value={deviceid}
-            onChangeText={setDeviceId} 
-            placeholder='Enter Device Id'
-            style = {{
-                backgroundColor: 'white',
-            width: '100%',
-            borderColor: '#e8e8e8',
-            borderWidth: 4,
-            borderRadius: 6,
-            paddingHorizontal: 10,
-            marginVertical: 12,}}
-            /> */}
 <View style={{
-    width:'50%'
+    width:'50%',
+    marginTop:10,
 }}>
 <Button
   onPress={''}
@@ -111,3 +84,5 @@ export default function Refuel() {
     </SafeAreaView>
   )
 }
+
+export default Refuel

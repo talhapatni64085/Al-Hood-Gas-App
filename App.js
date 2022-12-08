@@ -8,13 +8,16 @@ import AboutUs from './src/screens/AboutUs'
 import ContactUs from './src/screens/ContactUs'
 import FAQ from './src/screens/FAQ'
 import Notifications from './src/screens/Notifications'
-import Users from './src/screens/Users';  
+import Users from './src/screens/Users'; 
+import { MyStack } from './routes/homestack'; 
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import CustomDrawer from './src/components/CustomDrawer'
 import CreateUser from './src/screens/CreateUser';
 import Refuel from './src/screens/Refuel';
+import PaymentForm from './src/screens/PaymentForm';
+import User1 from './src/screens/User1';
 
 
 const Drawer = createDrawerNavigator();
@@ -42,9 +45,17 @@ export default function App() {
       <Drawer.Screen name="Noti" component={Notifications}/> 
       <Drawer.Screen name="CreateUser" component={CreateUser}/>
       <Drawer.Screen name="Refuel" component={Refuel}/>
+      <Drawer.Screen name="PaymentForm" component={PaymentForm}/>
+      <Drawer.Screen name="User1" component={User1}/>
         
     </Drawer.Navigator>
     </NavigationContainer>
+
+
+      //     <MyStack>
+      //   <LogIn/>
+      //  </MyStack>
+
   );
 }
 

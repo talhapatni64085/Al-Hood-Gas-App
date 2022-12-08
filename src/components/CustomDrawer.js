@@ -14,6 +14,7 @@ import {
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import LogIn from '../screens/LogIn';
 
 const CustomDrawer = props => {
   return (
@@ -37,7 +38,7 @@ const CustomDrawer = props => {
             }}>
             John Doe
           </Text>
-          <View style={{flexDirection: 'row'}}>
+          {/* <View style={{flexDirection: 'row'}}>
             <Text
               style={{
                 color: '#fff',
@@ -47,14 +48,16 @@ const CustomDrawer = props => {
               280 Coins
             </Text>
             <FontAwesome5 name="coins" size={14} color="#fff" />
-          </View>
+          </View> */}
         </ImageBackground>
         <View style={{flex: 1, backgroundColor: '#fff', paddingTop: 10}}>
           <DrawerItemList {...props} />
         </View>
       </DrawerContentScrollView>
       <View style={{padding: 20, borderTopWidth: 1, borderTopColor: '#ccc',backgroundColor:'#fff'}}>
-        <TouchableOpacity onPress={() => {}} style={{paddingVertical: 15}}>
+        <TouchableOpacity 
+        //onPress={props.navigation.navigate(LogIn)} 
+        style={{paddingVertical: 15}}>
           <View style={{flexDirection: 'row', alignItems: 'center'}}>
             <Ionicons name="exit-outline" size={22} />
             <Text

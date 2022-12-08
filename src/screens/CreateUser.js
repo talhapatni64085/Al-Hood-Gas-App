@@ -3,8 +3,10 @@ import React from 'react'
 import { useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { windowHeight, windowWidth } from '../utils/Dimensions'
+import AntDesign from 'react-native-vector-icons/AntDesign'
+import Users from './Users'
 
-export default function CreateUser() {
+const CreateUser = ({navigation}) => {
 
     const [ name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -28,6 +30,16 @@ export default function CreateUser() {
           borderBottomRightRadius: 20,
           paddingHorizontal: 20,
         }}>
+          <View style={{
+              //flexDirection: 'row',
+              //justifyContent: 'space-between',
+              marginTop: 20,
+            }}>
+              <TouchableOpacity
+                onPress={()=> navigation.navigate(Users)}
+              >
+                <AntDesign name='back' size={30} color='#FFF' />
+              </TouchableOpacity>
             <View style={{
               //width:'100%',
               paddingTop: 40,
@@ -38,6 +50,7 @@ export default function CreateUser() {
                 color: "#FFF",
                 fontWeight: "bold",
               }}>Create User</Text>
+            </View>
             </View>
             </View>
             <View style={{
@@ -111,3 +124,5 @@ export default function CreateUser() {
     </SafeAreaView>
   )
 }
+
+export default CreateUser

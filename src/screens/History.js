@@ -11,14 +11,14 @@ import {windowWidth} from '../../src/utils/Dimensions'
 export default function History() {
 
   const [notification,setNotification]=useState([
-    {name: 'Talha', id: '1'},
-    {name: 'Talha', id: '2'},
-    {name: 'Talha', id: '3'},
-    {name: 'Talha', id: '4'},
-    {name: 'Talha', id: '5'},
-    {name: 'Talha', id: '6'},
-    {name: 'Talha', id: '7'},
-    {name: 'Talha', id: '8'},
+    {name: 'History', id: '1'},
+    {name: 'History', id: '2'},
+    {name: 'History', id: '3'},
+    {name: 'History', id: '4'},
+    {name: 'History', id: '5'},
+    {name: 'History', id: '6'},
+    {name: 'History', id: '7'},
+    {name: 'History', id: '8'},
 ]);
 
   const nav = useNavigation();
@@ -62,11 +62,13 @@ backgroundColor:'lightgray',
           </View>
 </View>
 </View>
-<View>
+
+  
   <FlatList
             keyExtractor={(item) => item.id}
             data={notification}
             renderItem={({item}) => (
+              <TouchableOpacity>
                 <Text style={{
                     marginTop:20,
                     padding:40,
@@ -76,9 +78,11 @@ backgroundColor:'lightgray',
                 }}>
                   {item.name}
                   </Text>
+                  </TouchableOpacity>
             )}
             />
-            </View>
+            
+            
 </View>
 </SafeAreaView>
   )

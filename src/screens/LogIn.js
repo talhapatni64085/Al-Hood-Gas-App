@@ -5,15 +5,17 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import {windowHeight} from '../../src/utils/Dimensions'
 import {windowWidth} from '../../src/utils/Dimensions'
 import Logo from '../../assets/images/logo_1.png'
+import Home from './Home'
 
-export default function LogIn() {
+const LogIn = ({navigation}) => {
   const [ modelno, setModelno] = useState('');
   const [password, setPassword] = useState('');
 
     const{height} = useWindowDimensions();
 
   return (
-    <SafeAreaView style={{
+    <SafeAreaView 
+    style={{
       height:windowHeight,
       width:windowWidth,
       flex:1,
@@ -63,7 +65,7 @@ export default function LogIn() {
       width:'50%',
     }}>
     <Button
-  onPress={''}
+  onPress={()=> navigation.navigate(Home)}
   title="Sign In"
   color="orange"
 />
@@ -82,3 +84,5 @@ const styles = StyleSheet.create({
       marginLeft:60,
   },
 });
+
+export default LogIn
